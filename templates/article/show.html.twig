@@ -1,0 +1,51 @@
+{% extends 'public/layout.html.twig' %}
+
+{% block title %}Article{% endblock %}
+
+{% block body %}
+    <h1>Article</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ article.id }}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ article.title }}</td>
+            </tr>
+            <tr>
+                <th>Content</th>
+                <td>{{ article.content }}</td>
+            </tr>
+            <tr>
+                <th>Created</th>
+                <td>{{ article.created ? article.created|date('Y-m-d') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="row">
+        {% for other_article in articles %}
+            {% if other_article.id is not same as(article.id) %}
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="full news_blog">
+                        <img class="img-responsive" src="{{ asset('images/b'~ loop.index ~'.png') }}" alt="#" />
+                        <div class="overlay">><a class="main_bt transparent" href="{{ path('article_show', { 'id' : other_article.id }) }}">Voir</a></div>
+                        <div class="blog_details">
+                            <h3>{{ other_article.title }}</h3>
+                            <p>pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+
+    <a href="{{ path('article_index') }}">Retour à la liste</a>
+
+    <a href="{{ path('article_edit', {'id': article.id}) }}">Modifier</a>
+
+    {{ include('article/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'admin/layout.html.twig' %}
+
+{% block title %}Nouvelle page d'accueil{% endblock %}
+
+{% block body %}
+    <h1>Créer une nouvelle page d'accueil</h1>
+
+    {{ include('homepage/_form.html.twig') }}
+
+    <a href="{{ path('homepage_index') }}">Retour à la liste</a>
+{% endblock %}

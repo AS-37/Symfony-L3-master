@@ -1,0 +1,121 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bienvenue !{% endblock %}
+
+{% block layout %}
+
+    <div class="section first">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    {% block body %}{% endblock %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- section -->
+    <div class="section layout_padding padding_top_0">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="full">
+                        <div class="heading_main text_align_center">
+                            <h2><span class="theme_color"></span>Actualités</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="full news_blog">
+                        <img class="img-responsive" src="{{ asset('images/b1.png') }}" alt="#"/>
+                        <div class="overlay"><a class="main_bt transparent" href="#">Regarder</a></div>
+                        <div class="blog_details">
+                            <h3>Nouveautés du Bitcoin </h3>
+                            <p>Un nouveau cap est franchi. Le cours du bitcoin a passé le seuil symbolique des 15 000 dollars jeudi 5 novembre 2020. </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="full news_blog">
+                        <img class="img-responsive" src="{{ asset('images/b2.png') }}" alt="#"/>
+                        <div class="overlay"><a class="main_bt transparent" href="#">Regarder</a></div>
+                        <div class="blog_details">
+                            <h3> Nouveau Ethereum </h3>
+                            <p> Un protocole d'échanges décentralisés permettant la création par les utilisateurs de contrats intelligents grâce à un langage Turing-complet.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="full news_blog">
+                        <img class="img-responsive" src="{{ asset('images/b3.png') }}" alt="#"/>
+                        <div class="overlay"><a class="main_bt transparent" href="#">Regarder</a></div>
+                        <div class="blog_details">
+                            <h3>Nouveau jour</h3>
+                            <p>   Un nouveau jour pour la monnaie le debut du bitcoins</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end section -->
+
+
+    <!-- end section -->
+    <!-- Start Footer -->
+    <footer class="footer-box">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 white_fonts">
+                    <div class="row">
+                        <div class="col-sm-6 col-md-6 col-lg-3">
+                            <div class="full">
+                                <img class="img-responsive" src="{{ asset('images/footer_logo.png') }}" alt="#"/>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-6 col-lg-3">
+                            <div class="full">
+                                <h3>Liens rapides</h3>
+                            </div>
+                            <div class="full">
+                                <ul class="menu_footer">
+                                    <li><a href="home.html">> Accueil</a></li>
+                                    <li><a href="about.html">> À propos</a></li>
+                                    <li><a href="exchange.html">> Échange</a></li>
+                                    <li><a href="services.html">> Services</a></li>
+                                    <li><a href="new.html">> Actualités</a></li>
+                                    <li><a href="{{ path('contact_new') }}">> Contact</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-6 col-lg-3">
+                            <div class="full">
+                                <div class="footer_blog full white_fonts">
+                                    <h3>Nous contacter</h3>
+                                    <ul class="full">
+                                        <li><img src="images/i5.png"><span>London 145<br>United Kingdom</span></li>
+                                        <li><img src="images/i6.png"><span>demo@gmail.com</span></li>
+                                        <li><img src="images/i7.png"><span>+12586954775</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- End Footer -->
+
+    <div class="footer_bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

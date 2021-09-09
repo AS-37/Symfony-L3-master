@@ -1,0 +1,1 @@
+`php bin/console doctrine:migrations:execute DoctrineMigrations\Version20200925152942 --down`

@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello {{app.user.username}} !{% endblock %}
+
+{% block logo %}
+    <a class="navbar-brand" href="{{ path('admin')}}">
+        <img src="{{asset('images/admin_logo.png')}}" style="height: 110px;" alt="image">
+    </a>
+{% endblock %}
+
+{% block header_links %}
+    <div class="site_information">
+        <ul>
+            <li><a class="join_bt" href="{{ path('index') }}">Voir le site</a></li>
+        </ul>
+    </div>
+{% endblock %}
+
+{% block navbar_links %}
+    <li><a class="nav-link active" href="{{ path('article_index')}}">Actualités</a></li>
+    <li><a class="nav-link active" href="{{ path('contact_index')}}">Demandes de contact</a></li>
+{% endblock %}
+
+{% block layout %}
+
+    <!-- Start header -->
+    <div class="section first">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    {% block body %}{% endblock %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

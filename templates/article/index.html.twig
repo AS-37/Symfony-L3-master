@@ -1,0 +1,38 @@
+{% extends 'public/layout.html.twig' %}
+
+{% block title %}Articles{% endblock %}
+
+{% block body %}
+
+    <div class="section layout_padding padding_top_0">
+          <div class="container">
+              <div class="row">
+                  <div class="col-md-12">
+                      <div class="full">
+                          <div class="heading_main text_align_center">
+                              <h2><span class="theme_color"></span>Actualités</h2>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="row">
+                  {% for article in articles %}
+                          <div class="col-md-4 col-sm-6 col-xs-12">
+                              <div class="full news_blog">
+                                  <img class="img-responsive" src="{{ asset('images/b'~ loop.index ~'.png') }}" alt="#" />
+                                  <div class="overlay">><a class="main_bt transparent" href="{{ path('article_show', { 'id' : article.id }) }}">Voir</a></div>
+                                  <div class="blog_details">
+                                      <h3>{{ article.title }}</h3>
+                                      <p>pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                                  </div>
+                              </div>
+                          </div>
+                  {% endfor %}
+              </div>
+
+            <a class="main_bt" href="{{ path('article_new') }}">Créer un nouvel article</a>
+
+          </div>
+      </div>
+
+{% endblock %}
